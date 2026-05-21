@@ -1,0 +1,35 @@
+# --- MounRiver Studio / GCC Build Artifacts ---
+# These folders contain the compiled objects (.o) and final binaries (.hex)
+obj/
+bin/
+Debug/
+Release/
+
+# Individual binary outputs generated from your source
+*.elf
+*.hex
+*.bin
+*.lst
+*.map
+
+# --- IDE / Eclipse Local Settings ---
+# These are specific to your local machine and should not be shared
+.settings/
+.externalToolBuilders/
+.metadata/
+.loadpath
+.recommenders/
+
+# --- Hardware Design (EasyEDA / KiCad) ---
+# Backup and temporary files generated during PCB layout
+*.b#*
+*.s#*
+*.l#*
+*.bak
+*-backups/
+_autosave-*
+fp-info-cache
+
+# --- OS Specific Files ---
+.DS_Store
+Thumbs.db
