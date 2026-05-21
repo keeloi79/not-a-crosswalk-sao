@@ -1,42 +1,38 @@
-# Programming Guide
+## 🛠️ Programming Hardware
 
-This guide explains how to flash the "Not Just a Crosswalk" firmware onto the CH32V003 F4P6 microcontroller using the integrated pogo-pin interface.
+- **Debugger:** WCH-LinkE (RISC-V Edition)
+- **Clip:** 2.54mm Single Row 6-Pin Pogo Test Clip
 
-## 🛠️ Required Tools
+## 🗺️ Wiring Map: WCH-LinkE to SAO
 
-- **WCH-LinkE Programmer:** The standard debugger for RISC-V CH32V series MCUs.
-- **Pogo Pin Adapter:** A 5-pin pogo clip or jig compatible with the H1 Pogo Clip Pads.
+The Crosswalk SAO v8 uses a 6-pad programming header labeled H1 on the back of the PCB. Connect your WCH-LinkE to the pogo clip according to this 1:1 mapping:
 
-## 🛠️ MounRiver Studio (MRS)
+| Pogo Pin | SAO Pad (H1) | WCH-LinkE Connection | Function |
+|----------|--------------|------------------------|----------|
+| 1        | NRST         | NRST                   | Hardware Reset |
+| 2        | UART_TX      | RX                     | Serial Debug Output |
+| 3        | UART_RX      | TX                     | Serial Command Input |
+| 4        | SWIO         | SWIOS                  | Single-Wire Interface Data |
+| 5        | GND          | GND                    | Ground Reference |
+| 6        | GND          | GND                    | Secondary Ground (Stability) |
 
-The official IDE for building and downloading the firmware.
+## ⚡ Powering the Badge During Flash
 
-## 🔌 Hardware Connection
+The CH32V003 must be powered to accept the firmware.
 
-Connect your WCH-LinkE to the Pogo Clip Pads on the back of the PCB as follows:
+- **Preferred:** Power via the USB-C port (5V standalone).
+- **Alternative:** Power via the SAO header (3.3V from host).
 
-| Pogo Pad Label | WCH-LinkE Pin | Function |
-|----------------|---------------|----------|
-| GND            | GND           | Ground Reference |
-| SWIO           | SWIOS         | Single-Wire Interface (Data) |
-| NRST           | NRST          | Hardware Reset |
-| UART_TX        | RX            | Optional: Debug Output |
-| UART_RX        | TX            | Optional: Debug Input |
+**Note:** The AO3401A MOSFET will automatically manage the power path switching if both are connected.
 
-**Note:** The badge can be powered via the USB-C port or the SAO header during programming.
+## 💻 Flashing Procedure
 
-## 🖥️ Software Steps
+1. **Align Pogo Pins:** Place the 6-pin clip securely onto the H1 pads.
+2. **MounRiver Studio Setup:**
+   - Ensure the project is set for the CH32V003 target.
+   - Verify the WCH-Link is in RISC-V (RV) mode.
+3. **Download:** Initiate the flash. The LEDs will execute the Startup Rainbow Splash upon a successful write and reset.
 
-1. **Open Project:** Launch MounRiver Studio and import the project from the `/firmware` directory.
-2. **Build:** Click the Project -> Build All (Hammer icon) to generate the `.elf` and `.hex` files.
-3. **Flash:**
-   - Click the Download (Blue arrow) icon.
-   - If the MCU is read-protected, MRS will prompt you to unprotect it. Select **Yes**.
-   - The IDE will erase the Flash at `0x08000000` and write the new firmware.
-4. **Verify:** Upon completion, the badge will execute the Startup Rainbow Splash, fading the 18 LEDs from 0 to full brightness.
+## 🛡️ Hardware Safety
 
-## 🛠️ Troubleshooting
-
-- **Connection Failed:** Ensure the pogo pins are making firm, vertical contact with the HD-P2254-11 pads.
-- **Power Issue:** If programming via the SAO header, ensure the host badge is providing a stable 3.3V to the Bulk3V3 rail.
-- **Flash Error:** If the `LOAD_SETTINGS` function fails to find data, ensure you have not accidentally protected the specific `0x08003FC0` Flash page.
+Each of the 6 pins is protected by a TPD1E05U06DPYR-ES ESD diode. This protects the SWIO and UART lines from the static transients often generated when applying pogo pins in the field.
