@@ -44,7 +44,7 @@ This project is a Simple Add-On (SAO) designed for Defcon 34. It features 18 WS2
 
 ## Hardware
 
-See [hardware.md](docs/hardware.md) for details on components, connectors, and PCB layout.
+See [hardware.md](docs/HARDWARE.md) for details on components, connectors, and PCB layout.
 
 ## Firmware
 
@@ -52,7 +52,7 @@ See [firmware.md](docs/firmware.md) for build instructions and code structure.
 
 ## BOM & Sourcing
 
-See [BOM.md](docs/BOM.md) for component list. I used JLCPCB.com PCB Assembly service for this project.
+See [BOM.md](docs/BOM.md) for the component list. I used JLCPCB.com PCB Assembly service for this project.
 
 ## Changelog
 
