@@ -54,6 +54,23 @@ See [firmware.md](docs/firmware.md) for build instructions and code structure.
 
 See [BOM.md](docs/BOM.md) for the component list. I used JLCPCB.com PCB Assembly service for this project.
 
+# 🤝 Credits & Acknowledgments
+
+The Not Just a Crosswalk SAO is built upon the contributions of the open-source hardware and software community. We are proud to acknowledge the following creators and tools:
+
+## 💾 Software & Firmware
+
+- **WS2812 Driver for CH32V003:** This project utilizes the high-performance WS2812 driver developed by Blake Sands. His work is licensed under GPLv3, which ensures that the low-level timing logic remains open for all. https://github.com/Blakesands/CH32V003
+
+## 🛠 Hardware & Manufacturing
+
+- **Design Tooling:** The schematics and PCB layout were designed using EasyEDA.
+- **PCBA & Fabrication:** All PCBs were professionally manufactured and assembled by JLCPCB, ensuring the precision placement of the 0402/0603 SMDs and side-emitting LEDs.
+
+## 🎨 Community & Inspiration
+
+- **Tod Kurt (@todbot):** For the TouchwheelSAO repository structure and documentation style that I used as a basis for this project.
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for version history.
