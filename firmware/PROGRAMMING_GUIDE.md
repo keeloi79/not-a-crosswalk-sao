@@ -9,12 +9,13 @@ The Crosswalk SAO v8 uses a 6-pad programming header labeled H1 on the back of t
 
 | Pogo Pin | SAO Pad (H1) | WCH-LinkE Connection | Function |
 |----------|--------------|------------------------|----------|
-| 1        | NRST         | NRST                   | Hardware Reset |
-| 2        | UART_TX      | RX                     | Serial Debug Output |
-| 3        | UART_RX      | TX                     | Serial Command Input |
-| 4        | SWIO         | SWIOS                  | Single-Wire Interface Data |
-| 5        | GND          | GND                    | Ground Reference |
-| 6        | GND          | GND                    | Secondary Ground (Stability) |
+| 1        | 5V           | 5V                     | 5V VCC |
+| 2        | NRST         | NRST                   | Hardware Reset |
+| 3        | UART_TX      | RX                     | Serial Debug Output |
+| 4        | UART_RX      | TX                     | Serial Command Input |
+| 5        | SWIO         | SWIOS                  | Single-Wire Interface Data |
+| 6        | GND          | GND                    | Ground Reference |
+
 
 ## ⚡ Powering the Badge During Flash
 
