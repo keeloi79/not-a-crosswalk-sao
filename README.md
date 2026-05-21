@@ -69,7 +69,7 @@ The Not Just a Crosswalk SAO is built upon the contributions of the open-source 
 
 ## 🎨 Community & Inspiration
 
-- **Tod Kurt (@todbot):** For the TouchwheelSAO repository structure and documentation style that I used as a basis for this project.
+- **Tod Kurt (@todbot):** For the TouchwheelSAO repository structure and documentation style that I used as a basis for this project. https://github.com/todbot/TouchwheelSAO
 
 ## Changelog
 
